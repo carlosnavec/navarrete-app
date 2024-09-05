@@ -1,0 +1,45 @@
+/* src/ui/components/ErrorComponent.scss */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: black;
+  color: red;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.error-container div {
+    border-color: white;
+    border-style: solid;
+    width: 70vw;
+    margin: 20px;
+    text-align: center;
+}
+.error-container h2 {
+  margin-bottom: 0.5em;
+  text-shadow: 2px 2px 0 #000, 4px 4px 0 #ff0000;
+  animation: color-change 0.2s infinite alternate;
+  line-height: 2;
+}
+
+
+
+@keyframes color-change {
+  0% {
+    color: red;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #ff0000;
+  }
+  50% {
+    color: yellow;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #ffff00;
+  }
+  100% {
+    color: green;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #00ff00;
+  }
+}

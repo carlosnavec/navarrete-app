@@ -8,24 +8,37 @@ import { NUM_ITEMS_PER_PAGE } from '../../constants/servicesconstants';
 
 import './homepage.scss'
 import Spinner from '../components/Spinner';
+import ErrorComponent from '../components/error/ErrorComponent';
 
 const HomePage: React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPokemons = async () => {
-      const data = await pokeAPIAdapter.getPokemons(offset, NUM_ITEMS_PER_PAGE);
-      setPokemons(data);
-      setLoading(false);
+      try {
+        const data = await pokeAPIAdapter.getPokemons(offset, NUM_ITEMS_PER_PAGE);
+        setPokemons(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching Pokemon list:', error);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchPokemons();
   }, [offset]);
 
   if (loading) {
     return <Spinner />;
+  }
+
+  if (error) {
+    return <ErrorComponent />;
   }
 
   const handleNext = () => {
