@@ -9,25 +9,16 @@ interface Props {
 
 const PokemonList: React.FC<Props> = ({ pokemons, onPokemonClick }) => {
 
-  // Transformar los datos de Pokemon a ReactNode[][]
-  const tableData: React.ReactNode[][] = pokemons.map(pokemon => [pokemon.name]);
-  console.log(tableData);
+  const tableProps = {
+    data: pokemons.map(pokemon => [pokemon.name]),
+    headers: ['name'],
+    onContentCellClick: (name: string) => onPokemonClick(name)
+  }
+
   return (
     <>
-     <Table data={tableData} headers={['name']}/>
+     <Table {...tableProps}/>
     </>
-    // <div>
-    //   <ul>
-    //     {pokemons.map((pokemon) => {
-    //       const isLink = typeof pokemon.name === 'string' && pokemon.name.includes('https://');
-    //       console.log(isLink);
-    //       return (
-    //       <li key={pokemon.name} onClick={() => onPokemonClick(pokemon.name)}>
-    //         {pokemon.name}
-    //       </li>
-    //     )})}
-    //   </ul>
-    // </div>
   );
 };
 
