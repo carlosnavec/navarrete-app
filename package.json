@@ -7,6 +7,7 @@
     "@types/node": "^16.18.107",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "antd": "^5.20.5",
     "axios": "^1.7.7",
     "navarrete-lib": "^0.3.0",
     "react": "^18.3.1",
@@ -20,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,9 +43,17 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
-    "@types/jest": "^29.5.12",
-    "jest": "^27.5.1"
+    "@types/jest": "^27.4.1",
+    "babel-jest": "^29.7.0",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4"
   }
 }

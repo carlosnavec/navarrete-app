@@ -24,8 +24,11 @@ const PokemonDetail: React.FC<Props> = ({ pokemon, onBack }) => {
   const tableStatsProps = {
     data: pokemon.stats.map(stat => [stat.stat.name, stat.base_stat]),
     headers: ['Stats', 'Value'],
+    height: pokemon.height,
   }
-  // console.log('tableStatsProps', Array.from(tableStatsProps));
+  
+  const heigtPokemonFormatted = `Height: ${pokemon.height / 10} m`;
+  const weightPokemonFormatted = `Weight: ${pokemon.weight / 10} kg`;
 
   return (
     <div className='main-detail'>
@@ -33,8 +36,8 @@ const PokemonDetail: React.FC<Props> = ({ pokemon, onBack }) => {
       <div className='head-detail'>
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
         <div>
-          <p><strong>Height:</strong> {pokemon.height / 10} m</p>
-          <p><strong>Weight:</strong> {pokemon.weight / 10} kg</p>
+          <p>{heigtPokemonFormatted}</p>
+          <p>{weightPokemonFormatted}</p>
         </div>
       </div>
       <div>
