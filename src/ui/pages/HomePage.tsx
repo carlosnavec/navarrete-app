@@ -4,6 +4,7 @@ import PokemonList from '../components/PokemonList';
 import Pagination from '../components/Pagination';
 import { Pokemon } from '../../core/entities/Pokemon';
 import { useNavigate } from 'react-router-dom';
+import { NUM_ITEMS_PER_PAGE } from '../../constants/servicesconstants';
 
 const HomePage: React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
@@ -12,14 +13,14 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     const fetchPokemons = async () => {
-      const data = await pokeAPIAdapter.getPokemons(offset, 20);
+      const data = await pokeAPIAdapter.getPokemons(offset, NUM_ITEMS_PER_PAGE);
       setPokemons(data);
     };
     fetchPokemons();
   }, [offset]);
 
-  const handleNext = () => setOffset(offset + 20);
-  const handlePrevious = () => setOffset(Math.max(0, offset - 20));
+  const handleNext = () => setOffset(offset + NUM_ITEMS_PER_PAGE);
+  const handlePrevious = () => setOffset(Math.max(0, offset - NUM_ITEMS_PER_PAGE));
   const handlePokemonClick = (name: string) => navigate(`/detail/${name}`);
 
   return (

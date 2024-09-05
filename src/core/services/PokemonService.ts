@@ -1,9 +1,10 @@
 import { IPokemonService } from '../interfaces/IPokemonService';
 import { Pokemon } from '../entities/Pokemon';
 import axios from 'axios';
+import { POKE_API_URL } from '../../constants/servicesconstants';
 
 export class PokemonService implements IPokemonService {
-  private apiUrl = 'https://pokeapi.co/api/v2';
+  private apiUrl = POKE_API_URL
 
   async getPokemons(offset: number, limit: number): Promise<Pokemon[]> {
     const response = await axios.get(`${this.apiUrl}/pokemon?offset=${offset}&limit=${limit}`);
