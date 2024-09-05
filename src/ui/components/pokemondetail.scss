@@ -1,0 +1,17 @@
+.head-detail {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: rgb(113, 115, 116)
+}
+
+.head-detail img {
+    width: 150px;
+    
+}
+
+.main-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
