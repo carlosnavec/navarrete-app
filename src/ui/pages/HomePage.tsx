@@ -7,22 +7,35 @@ import { useNavigate } from 'react-router-dom';
 import { NUM_ITEMS_PER_PAGE } from '../../constants/servicesconstants';
 
 import './homepage.scss'
+import Spinner from '../components/Spinner';
 
 const HomePage: React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
+  const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPokemons = async () => {
       const data = await pokeAPIAdapter.getPokemons(offset, NUM_ITEMS_PER_PAGE);
       setPokemons(data);
+      setLoading(false);
     };
     fetchPokemons();
   }, [offset]);
 
-  const handleNext = () => setOffset(offset + NUM_ITEMS_PER_PAGE);
-  const handlePrevious = () => setOffset(Math.max(0, offset - NUM_ITEMS_PER_PAGE));
+  if (loading) {
+    return <Spinner />;
+  }
+
+  const handleNext = () => {
+    setLoading(true);
+    setOffset(offset + NUM_ITEMS_PER_PAGE);
+  }
+  const handlePrevious = () => {
+      setLoading(true);
+      setOffset(Math.max(0, offset - NUM_ITEMS_PER_PAGE));
+  }
   const handlePokemonClick = (name: string) => navigate(`/detail/${name}`);
 
   return (

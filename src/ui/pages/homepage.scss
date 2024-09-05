@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .homepage {
   display: flex;
   flex-direction: column;
@@ -10,10 +21,3 @@
   min-width: 413px;
 }
 
-body {
-    background-color: #f0f0f0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
