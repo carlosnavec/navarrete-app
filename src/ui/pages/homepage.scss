@@ -1,0 +1,19 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  gap: 1em;
+  overflow-wrap: break-word;
+  min-width: 413px;
+}
+
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

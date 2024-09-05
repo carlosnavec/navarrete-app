@@ -6,6 +6,8 @@ import { Pokemon } from '../../core/entities/Pokemon';
 import { useNavigate } from 'react-router-dom';
 import { NUM_ITEMS_PER_PAGE } from '../../constants/servicesconstants';
 
+import './homepage.scss'
+
 const HomePage: React.FC = () => {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [offset, setOffset] = useState(0);
@@ -24,7 +26,7 @@ const HomePage: React.FC = () => {
   const handlePokemonClick = (name: string) => navigate(`/detail/${name}`);
 
   return (
-    <div>
+    <div className='homepage'>
       <h2>Pokemon List</h2>
       <PokemonList pokemons={pokemons} onPokemonClick={handlePokemonClick} />
       <Pagination onNext={handleNext} onPrevious={handlePrevious} />
