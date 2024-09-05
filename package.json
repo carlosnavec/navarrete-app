@@ -8,7 +8,7 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "axios": "^1.7.7",
-    "navarrete-lib": "^0.2.0",
+    "navarrete-lib": "^0.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
