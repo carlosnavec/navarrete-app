@@ -15,6 +15,8 @@ const HomePage: React.FC = () => {
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
+  const [isPreviousData, setIsPreviousData] = useState<boolean>(false);
+  const [isNextData, setIsNextData] = useState<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +24,8 @@ const HomePage: React.FC = () => {
       try {
         const data = await pokeAPIAdapter.getPokemons(offset, NUM_ITEMS_PER_PAGE);
         setPokemons(data);
+        setIsPreviousData(pokeAPIAdapter.getPreviousData());
+        setIsNextData(pokeAPIAdapter.getNextData());
         setLoading(false);
       } catch (error) {
         console.error('Error fetching Pokemon list:', error);
@@ -55,7 +59,7 @@ const HomePage: React.FC = () => {
     <div className='homepage'>
       <h2>Pokemon List</h2>
       <PokemonList pokemons={pokemons} onPokemonClick={handlePokemonClick} />
-      <Pagination onNext={handleNext} onPrevious={handlePrevious} />
+      <Pagination onNext={handleNext} onPrevious={handlePrevious} disabledPrevious={!isPreviousData} disabeldNext={!isNextData}/>
     </div>
   );
 };
