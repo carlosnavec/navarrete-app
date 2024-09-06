@@ -2,7 +2,7 @@
   "name": "navarrete-app",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https: //carlosnavec.github.io/navarrete_app",
+  "homepage": "https://carlosnavec.github.io/navarrete_app",
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^16.18.107",
