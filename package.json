@@ -1,6 +1,6 @@
 {
   "name": "navarrete-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "homepage": "https://carlosnavec.github.io/navarrete_app",
   "dependencies": {
