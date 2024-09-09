@@ -1,3 +1,29 @@
+# Navarrete app
+
+This app shows the pokemonlist and detail of pokemon selected.
+
+You can view app working in : [navarrete-app githup page](https://carlosnavec.github.io/navarrete-app/)
+
+
+## Features
+
+- Show a pagination list of pokemon
+
+- Show a detail view of pokemom selected
+
+- Handling error if api call fails
+
+- Show an spiner while loading calls
+
+- Integrate [custom components library](https://www.npmjs.com/package/navarrete-lib)
+
+- CI/CD pipeline in github
+
+- Style as arcade games
+ 
+- Hexagonal arquitecture
+ 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
