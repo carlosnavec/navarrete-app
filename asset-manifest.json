@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/navarrete-app/static/css/main.4baa4209.css",
-    "main.js": "/navarrete-app/static/js/main.49063b30.js",
+    "main.js": "/navarrete-app/static/js/main.c83bc352.js",
     "index.html": "/navarrete-app/index.html",
     "main.4baa4209.css.map": "/navarrete-app/static/css/main.4baa4209.css.map",
-    "main.49063b30.js.map": "/navarrete-app/static/js/main.49063b30.js.map"
+    "main.c83bc352.js.map": "/navarrete-app/static/js/main.c83bc352.js.map"
   },
   "entrypoints": [
     "static/css/main.4baa4209.css",
-    "static/js/main.49063b30.js"
+    "static/js/main.c83bc352.js"
   ]
 }
