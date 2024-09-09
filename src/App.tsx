@@ -10,6 +10,8 @@ import {
 
 import './App.scss';
 
+const basename = process.env.REACT_APP_BASENAME || '';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -17,13 +19,13 @@ const router = createBrowserRouter(
     <Route path="/detail/:name" element={<DetailPage />} />
     </>
    
-  )
+  ), {basename: basename}
 );
 
 const App: React.FC = () => {
   return (
     <>
-     <RouterProvider router={router} />
+     <RouterProvider router={router}  />
     </>
   );
 };
