@@ -1,17 +1,30 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './ui/pages/HomePage';
 import DetailPage from './ui/pages/DetailPage';
+
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
 import './App.scss';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/detail/:name" element={<DetailPage />} />
+    </>
+   
+  )
+);
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/detail/:name" element={<DetailPage/>} />
-      </Routes>
-    </Router>
+    <>
+     <RouterProvider router={router} />
+    </>
   );
 };
 
